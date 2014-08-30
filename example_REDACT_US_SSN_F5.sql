@@ -50,3 +50,18 @@ INSERT INTO T_EXAMPLE_REDACT_US_SSN_F5 (ID, SSNUMBER) VALUES ('0007', '421-31-53
 INSERT INTO T_EXAMPLE_REDACT_US_SSN_F5 (ID, SSNUMBER) VALUES ('0008', '417-33-3888');
 COMMIT;
 
+
+-- Implement redaction policy on T_EXAMPLE_REDACT_US_SSN_F5.SSNUMBER
+BEGIN
+ DBMS_REDACT.ADD_POLICY(
+   object_schema         => 'SYSTEM', 
+   object_name           => 'T_EXAMPLE_REDACT_US_SSN_F5', 
+   column_name           => 'SSNUMBER',
+   policy_name           => 'redact_SSNUMBER', 
+   function_type         => DBMS_REDACT.PARTIAL,
+   function_parameters   => DBMS_REDACT.REDACT_US_SSN_F5,
+   expression            => '1=1',
+   policy_description    => 'Redact the first 5 chars of the SSN',
+   column_description    => 'Column containing the SSN'
+   );
+END;
