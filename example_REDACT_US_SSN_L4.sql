@@ -1,12 +1,12 @@
 /* NAME:
- * example_REDACT_US_SSN_F5.sql
+ * example_REDACT_US_SSN_L4.sql
  *
  * DESC:
- * Example of Oracl Data Redaction using REDACT_US_SSN_F5 to redact a social security number.
+ * Example of Oracl Data Redaction using REDACT_US_SSN_L4 to redact a social security number.
  * 
  * LOG:
  * VERSION---DATE--------NAME-------------COMMENT
- * 0.1       29AUG2014   Johan Louwers    Initial upload to github.com
+ * 0.1       30AUG2014   Johan Louwers    Initial upload to github.com
  *
  * LICENSE:
  * Copyright (C) 2014  Johan Louwers
